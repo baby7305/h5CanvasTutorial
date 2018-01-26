@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 canvas fade out demo</title>
+    <script>
+        var alpha = 1.0;
+        var ctx;
+        var canvas;
+        var img;
+
+        function init() {
+            canvas = document.getElementById('myCanvas');
+            ctx = canvas.getContext('2d');
+
+            img = new Image();
+            img.src = 'mushrooms.jpg';
+
+            img.onload = function () {
+                ctx.drawImage(img, 10, 10);
+            };
+
+            fadeOut();
+        }
+
+        function fadeOut() {
+
+            if (alpha <= 0) {
+                return;
+            }
+
+            requestAnimationFrame(fadeOut);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.globalAlpha = alpha;
+
+            ctx.drawImage(img, 10, 10);
+
+            alpha += -0.01;
+        }        
+    </script>
+</head>
+
+<body onload="init();">
+    <canvas id="myCanvas" width="350" height="250">
+    </canvas>
+</body>
+
+</html>
