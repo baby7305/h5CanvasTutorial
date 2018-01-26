@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 canvas linear gradient</title>
+    <script>
+        function draw() {
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            var lgr = ctx.createLinearGradient(150, 0, 150, 160);
+            lgr.addColorStop(0.2, "black");
+            lgr.addColorStop(0.5, "red");
+            lgr.addColorStop(0.8, "black");
+
+            ctx.fillStyle = lgr;
+            ctx.fillRect(0, 0, 300, 160);
+        }
+    </script>
+</head>
+
+<body onload="draw();">
+    <canvas id="myCanvas" width="350" height="350">
+    </canvas>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 canvas pattern</title>
+    <script>
+        function draw() {
+
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            var img = new Image();
+            img.src = 'crack.png';
+
+            img.onload = function () {
+                var pattern = ctx.createPattern(img, 'repeat');
+
+                ctx.rect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = pattern;
+                ctx.fill();
+            };
+        }
+    </script>
+</head>
+
+<body onload="draw();">
+    <canvas id="myCanvas" width="250" height="250">
+    </canvas>
+</body>
+
+</html>

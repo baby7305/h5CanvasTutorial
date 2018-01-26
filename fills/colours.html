@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 Canvas colour fills</title>
+    <script>
+        function draw() {
+
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            ctx.fillStyle = 'brown';
+            ctx.fillRect(10, 10, 90, 60);
+
+            ctx.fillStyle = 'rgb(217, 146, 54)';
+            ctx.fillRect(130, 10, 90, 60);
+
+            ctx.fillStyle = '#3F79BA';
+            ctx.fillRect(250, 10, 90, 60);
+        }
+    </script>
+</head>
+
+<body onload="draw();">
+    <canvas id="myCanvas" width="350" height="250">
+    </canvas>
+</body>
+
+</html>

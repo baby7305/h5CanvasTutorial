@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 canvas radial gradient</title>
+    <script>
+        function draw() {
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            var rgr = ctx.createRadialGradient(canvas.width / 2, canvas.height / 2, 5,
+                canvas.width / 2, canvas.height / 2, 100);
+            rgr.addColorStop(0, "black");
+            rgr.addColorStop(0.3, "yellow");
+            rgr.addColorStop(1, "black");
+
+            ctx.fillStyle = rgr;
+            ctx.fillRect(0, 0, 250, 250);
+        }
+    </script>
+</head>
+
+<body onload="draw();">
+    <canvas id="myCanvas" width="250" height="250">
+    </canvas>
+
+</body>
+
+</html>
