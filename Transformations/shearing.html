@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 canvas shearing</title>
+    <script>
+        function draw() {
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            ctx.translate(0.5, 0.5);
+            ctx.setLineDash([2]);
+
+            ctx.save();
+            ctx.strokeStyle = 'green';
+            ctx.strokeRect(50, 90, 160, 50);
+            ctx.restore();
+
+            ctx.save();
+            ctx.strokeStyle = 'blue';
+            ctx.transform(1, 1, 0, 1, 0, 0);
+            ctx.strokeRect(50, 40, 80, 50);
+            ctx.restore();
+
+            ctx.save();
+            ctx.strokeStyle = 'red';
+            ctx.transform(1, 1, 0, 1, 0, -130);
+            ctx.strokeRect(130, 10, 80, 50);
+            ctx.restore();
+        }    
+    </script>
+</head>
+
+<body onload="draw();">
+    <canvas id="myCanvas" width="300" height="300">
+    </canvas>
+</body>
+
+</html>

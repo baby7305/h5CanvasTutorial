@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 canvas rotation</title>
+    <script>
+        function draw() {
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            ctx.fillStyle = 'gray';
+            ctx.rotate(Math.PI / 10);
+            ctx.fillRect(50, 10, 120, 80);
+        }    
+    </script>
+</head>
+
+<body onload="draw();">
+    <canvas id="myCanvas" width="200" height="200">
+    </canvas>
+</body>
+
+</html>
