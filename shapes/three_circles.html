@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 Canvas three circles</title>
+    <script>
+        function draw() {
+
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            ctx.lineWidth = 3;
+
+            ctx.fillStyle = 'gray';
+            ctx.beginPath();
+            ctx.arc(90, 90, 60, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(120, 150, 60, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(150, 100, 60, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.globalCompositeOperation = 'destination-out';
+
+            ctx.beginPath();
+            ctx.arc(90, 90, 60, 0, 2 * Math.PI);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(120, 150, 60, 0, 2 * Math.PI);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(150, 100, 60, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+    </script>
+</head>
+
+<body onload="draw();">
+    <canvas id="myCanvas" width="400" height="350">
+    </canvas>
+</body>
+
+</html>
