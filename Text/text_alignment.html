@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 canvas text alignment</title>
+    <style>
+        canvas {
+            border: 1px solid #bbbbbb
+        }
+    </style>
+    <script>
+        function draw() {
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            var cw = canvas.width / 2;
+
+            ctx.fillStyle = 'gray';
+            ctx.translate(0.5, 0.5);
+            ctx.setLineDash([2]);
+
+            ctx.beginPath();
+            ctx.moveTo(cw, 0);
+            ctx.lineTo(cw, canvas.height);
+            ctx.stroke();
+
+            ctx.font = "16px serif";
+
+            ctx.textAlign = "center";
+            ctx.fillText("center", cw, 20);
+
+            ctx.textAlign = "start";
+            ctx.fillText("start", cw, 60);
+
+            ctx.textAlign = "end";
+            ctx.fillText("end", cw, 100);
+
+            ctx.textAlign = "left";
+            ctx.fillText("left", cw, 140);
+
+            ctx.textAlign = "right";
+            ctx.fillText("right", cw, 180);
+        }    
+    </script>
+</head>
+
+<body onload="draw();">
+    <canvas id="myCanvas" width="350" height="200">
+    </canvas>
+</body>
+
+</html>

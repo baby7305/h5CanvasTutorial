@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 canvas drawing text</title>
+    <script>
+        function draw() {
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            ctx.font = "28px serif";
+            ctx.fillText("ZetCode", 15, 25);
+
+            ctx.font = "36px sans-serif";
+            ctx.strokeText("ZetCode", 30, 80);
+        }      
+    </script>
+</head>
+
+<body onload="draw();">
+    <canvas id="myCanvas" width="200" height="150">
+    </canvas>
+</body>
+
+</html>

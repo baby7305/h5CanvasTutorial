@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 canvas drawing text</title>
+    <script>
+        function draw() {
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            ctx.font = "normal bold 18px serif";
+            ctx.fillText('nice', 10, 20);
+
+            ctx.font = "italic 18px serif";
+            ctx.fillText('pretty', 70, 20);
+
+            ctx.font = "small-caps bolder 18px serif";
+            ctx.fillText('beautiful', 160, 20);
+        }      
+    </script>
+</head>
+
+<body onload="draw();">
+    <canvas id="myCanvas" width="350" height="150">
+    </canvas>
+</body>
+
+</html>
