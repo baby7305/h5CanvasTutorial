@@ -12,7 +12,7 @@ window.onload = function () {
         context.fillStyle = "#ff0000";
         context.fillRect(10, 10, 50, 50);
 
-        context.globalAlpha = 0.5;
+        context.globalCompositeOperation = "destination-over";
 
         //draw a blue rectangle
         context.fillStyle = "rgba(0,0,255,1)";
