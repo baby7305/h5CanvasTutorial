@@ -1,3 +1,6 @@
+function createRectLinearGradient(context, x, y, width, height) {
+    return context.createLinearGradient(x, y, x + width, y + height);
+}
 
 window.onload = function () {
     var drawing = document.getElementById("drawing"),
@@ -7,7 +10,7 @@ window.onload = function () {
     if (drawing.getContext) {
 
         var context = drawing.getContext("2d"),
-            gradient = context.createLinearGradient(30, 30, 70, 70);
+            gradient = createRectLinearGradient(context, 30, 30, 50, 50);
 
 
         gradient.addColorStop(0, "white");
@@ -19,7 +22,7 @@ window.onload = function () {
 
         //draw a gradient rectangle
         context.fillStyle = gradient;
-        context.fillRect(50, 50, 50, 50);
+        context.fillRect(30, 30, 50, 50);
     }
 
     btn.onclick = function () {
