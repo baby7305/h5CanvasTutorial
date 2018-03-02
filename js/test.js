@@ -18,15 +18,25 @@ window.onload = function () {
         context.moveTo(194, 100);
         context.arc(100, 100, 94, 0, 2 * Math.PI, false);
         
-        //draw minute hand
+        //draw hour hand
         context.moveTo(100,100);
         context.lineTo(100, 15);
         
-        //draw hour hand
+        //draw minute hand
         context.moveTo(100, 100);
         context.lineTo(35, 100);
         
         context.stroke();
+        
+        //add some text - not supported by all browsers
+        if (context.strokeText){
+            context.font = "bold 14px Arial";
+            context.textAlign = "center";
+            context.textBaseline = "middle";
+            context.fillText("12", 100, 20);
+        } else {
+            alert("Your browser doesn't support the canvas text API.");
+        }
     }
 
     btn.onclick = function () {
