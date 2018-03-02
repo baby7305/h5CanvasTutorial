@@ -6,20 +6,19 @@ window.onload = function () {
     //make sure <canvas> is completely supported
     if (drawing.getContext) {
 
-        var context = drawing.getContext("2d");
+        var context = drawing.getContext("2d"),
+            gradient = context.createLinearGradient(30, 30, 70, 70);
 
-        //setup shadow
-        context.shadowOffsetX = 5;
-        context.shadowOffsetY = 5;
-        context.shadowBlur = 4;
-        context.shadowColor = "rgba(0, 0, 0, 0.5)";
+
+        gradient.addColorStop(0, "white");
+        gradient.addColorStop(1, "black");
 
         //draw a red rectangle
         context.fillStyle = "#ff0000";
         context.fillRect(10, 10, 50, 50);
 
-        //draw a blue rectangle
-        context.fillStyle = "rgba(0,0,255,1)";
+        //draw a gradient rectangle
+        context.fillStyle = gradient;
         context.fillRect(30, 30, 50, 50);
     }
 
