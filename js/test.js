@@ -9,12 +9,15 @@ window.onload = function () {
         var context = drawing.getContext("2d");
 
         //draw a red rectangle
-        context.strokeStyle = "#ff0000";
-        context.strokeRect(10, 10, 50, 50);
+        context.fillStyle = "#ff0000";
+        context.fillRect(10, 10, 50, 50);
     
         //draw a blue rectangle that's semi-transparent
-        context.strokeStyle = "rgba(0,0,255,0.5)";
-        context.strokeRect(30, 30, 50, 50);
+        context.fillStyle = "rgba(0,0,255,0.5)";
+        context.fillRect(30, 30, 50, 50);
+        
+        //clear a rectangle that overlaps both of the previous rectangles
+        context.clearRect(40, 40, 10, 10);
     }
 
     btn.onclick = function () {
