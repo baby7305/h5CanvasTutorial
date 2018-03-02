@@ -6,37 +6,31 @@ window.onload = function () {
     //make sure <canvas> is completely supported
     if (drawing.getContext) {
 
-        var context = drawing.getContext("2d");
+        var context = drawing.getContext("2d"),
+            fontSize = 50,
+            i, len;
 
-        //start the path
-        context.beginPath();
-                
-        //draw outer circle
-        context.arc(100, 100, 99, 0, 2 * Math.PI, false);
-        
-        //draw inner circle
-        context.moveTo(194, 100);
-        context.arc(100, 100, 94, 0, 2 * Math.PI, false);
-        
-        //draw hour hand
-        context.moveTo(100,100);
-        context.lineTo(100, 15);
-        
-        //draw minute hand
-        context.moveTo(100, 100);
-        context.lineTo(35, 100);
-        
-        context.stroke();
-        
-        //add some text - not supported by all browsers
-        if (context.strokeText){
-            context.font = "bold 14px Arial";
-            context.textAlign = "center";
-            context.textBaseline = "middle";
-            context.fillText("12", 100, 20);
+        //draw a red rectangle
+        context.strokeWidth = 1;
+        context.strokeStyle = "#000000";
+        context.strokeRect(10, 10, 150, 30);
+
+        //default font setting
+        context.font = fontSize + "px Arial";
+        context.textBaseline = "top";
+
+        if (context.measureText) {
+            while (context.measureText("Hello world!").width > 140) {
+                fontSize--;
+                context.font = fontSize + "px Arial";
+            }
+
+            context.fillText("Hello world!", 10, 10);
+            context.fillText("Font size is " + fontSize + "px", 10, 50);
         } else {
             alert("Your browser doesn't support the canvas text API.");
         }
+
     }
 
     btn.onclick = function () {
