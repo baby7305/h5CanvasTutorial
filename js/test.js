@@ -8,16 +8,25 @@ window.onload = function () {
 
         var context = drawing.getContext("2d");
 
-        //draw a red rectangle
-        context.fillStyle = "#ff0000";
-        context.fillRect(10, 10, 50, 50);
-    
-        //draw a blue rectangle that's semi-transparent
-        context.fillStyle = "rgba(0,0,255,0.5)";
-        context.fillRect(30, 30, 50, 50);
+        //start the path
+        context.beginPath();
+                
+        //draw outer circle
+        context.arc(100, 100, 99, 0, 2 * Math.PI, false);
         
-        //clear a rectangle that overlaps both of the previous rectangles
-        context.clearRect(40, 40, 10, 10);
+        //draw inner circle
+        context.moveTo(194, 100);
+        context.arc(100, 100, 94, 0, 2 * Math.PI, false);
+        
+        //draw minute hand
+        context.moveTo(100,100);
+        context.lineTo(100, 15);
+        
+        //draw hour hand
+        context.moveTo(100, 100);
+        context.lineTo(35, 100);
+        
+        context.stroke();
     }
 
     btn.onclick = function () {
