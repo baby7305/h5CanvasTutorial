@@ -19,7 +19,7 @@ window.onload = function () {
 
         //draw a gradient rectangle
         context.fillStyle = gradient;
-        context.fillRect(30, 30, 50, 50);
+        context.fillRect(50, 50, 50, 50);
     }
 
     btn.onclick = function () {
