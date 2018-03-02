@@ -6,8 +6,7 @@ window.onload = function () {
         value;
 
     view.setUint16(0, 25);
-    view.setUint16(2, 50);   //don't start at 1, 16-bit integers take two bytes
-    value = view.getUint16(0);
+    value = view.getInt8(0);
 
-    alert(value);
+    alert(value);    //0
 };
