@@ -1,6 +1,3 @@
-function createRectLinearGradient(context, x, y, width, height) {
-    return context.createLinearGradient(x, y, x + width, y + height);
-}
 
 window.onload = function () {
     var drawing = document.getElementById("drawing"),
@@ -10,7 +7,7 @@ window.onload = function () {
     if (drawing.getContext) {
 
         var context = drawing.getContext("2d"),
-            gradient = createRectLinearGradient(context, 30, 30, 50, 50);
+            gradient = context.createRadialGradient(55, 55, 10, 55, 55, 30);
 
 
         gradient.addColorStop(0, "white");
