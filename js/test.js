@@ -25,8 +25,9 @@ window.onload = function () {
                 context.font = fontSize + "px Arial";
             }
 
-            context.fillText("Hello world!", 10, 10);
-            context.fillText("Font size is " + fontSize + "px", 10, 50);
+            //known to work in Firefox 4, not Chrome
+            context.fillText("Hello world!", 10, 10, 50);
+            context.fillText("Font size is " + fontSize + "px", 10, 50, 150);
         } else {
             alert("Your browser doesn't support the canvas text API.");
         }
