@@ -2,6 +2,9 @@ var game = {
 	init: function () {
 		game.canvas = document.getElementById("gamecanvas");
 		game.context = document.getElementById("2d");
+
+		levels.init();
+
 		game.hideScreens();
 		game.showScreen("gamestartscreen");
 
@@ -26,7 +29,44 @@ var game = {
 		screen.style.display = "block";
 	},
 
-}
+};
+
+var levels = {
+	data: [{
+		foreground: "desert-foreground",
+		background: "clouds-background",
+		entities: [],
+	},
+	{
+		foreground: "desert-foreground",
+		background: "clouds-background",
+		entities: [],
+	}],
+
+	init: function () {
+		var levleSelectScreen = document.getElementById("levelselectscreen");
+
+		var buttonClickHandler = function () {
+			game.hideScreen("levelselectscreen");
+			levels.load(this.value - 1);
+		};
+
+		for (var i = 0; i < levels.data.length; i++) {
+			var button = document.createElement("input");
+			button.type = "button";
+			button.value = (i + 1);
+			button.addEventListener("click", buttonClickHandler());
+
+			levleSelectScreen.appendChild(button);
+		}
+	},
+
+	load: function (number) {
+
+	}
+
+
+};
 
 window.addEventListener("load", function () {
 	game.init();
