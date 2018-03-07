@@ -29,10 +29,21 @@ var game = {
 		screen.style.display = "block";
 	},
 
+	showLevelScreen: function () {
+		game.hideScreens();
+		game.showScreen("levelselectscreen");
+
+	}
+
 };
 
 var levels = {
 	data: [{
+		foreground: "desert-foreground",
+		background: "clouds-background",
+		entities: [],
+	},
+	{
 		foreground: "desert-foreground",
 		background: "clouds-background",
 		entities: [],
